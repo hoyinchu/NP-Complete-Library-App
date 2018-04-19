@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hoyinpersonal.npcompletelibrary.AllProblemsContent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/all_problems_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all_problems"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/bin_packing_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/bin_packing_name" />
+
+            <Button
+                android:id="@+id/clique_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/clique_name" />
+
+            <Button
+                android:id="@+id/dominating_set_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/dominating_set_name" />
+
+            <Button
+                android:id="@+id/feedback_arc_set_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/feedback_arc_set_name" />
+
+            <Button
+                android:id="@+id/feedback_vertex_set_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/feedback_vertex_set_name" />
+
+            <Button
+                android:id="@+id/hamiltonian-cycle_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/hamiltonian_cycle_name" />
+
+            <Button
+                android:id="@+id/hamiltonian_path_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/hamiltonian_path_name" />
+
+            <Button
+                android:id="@+id/independent-set_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/independent_set_name" />
+
+            <Button
+                android:id="@+id/job_scheduling_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/job_scheduling_name" />
+
+            <Button
+                android:id="@+id/longest_path_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/longest_path_name" />
+
+            <Button
+                android:id="@+id/partition_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/partition_name" />
+
+            <Button
+                android:id="@+id/satisfiability_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/satisfiability_name" />
+
+            <Button
+                android:id="@+id/set_cover_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/set_cover_name" />
+
+            <Button
+                android:id="@+id/set_packing_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/set_packing_name" />
+
+            <Button
+                android:id="@+id/subgraph_isomorphism_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/subgraph_isomorphism_name" />
+
+            <Button
+                android:id="@+id/subset_sum_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/subset_sum_name" />
+
+            <Button
+                android:id="@+id/three_coloring_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/three_coloring_name" />
+
+            <Button
+                android:id="@+id/three_dimensional_matching_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/three_dimensional_matching_name" />
+
+            <Button
+                android:id="@+id/three-satisfiability_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/three_satisfiability_name" />
+
+            <Button
+                android:id="@+id/traveling-salesman_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/traveling_salesman_name" />
+
+            <Button
+                android:id="@+id/vertex_cover_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/vertex_cover_name" />
+
+            <TextView
+                android:id="@+id/all_problems_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all_problems_comment" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

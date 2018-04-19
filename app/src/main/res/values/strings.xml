@@ -1,0 +1,332 @@
+<resources xmlns:android="http://schemas.android.com/tools">
+    <!--shared among all-->
+    <string name="what_is_the_problem">What is the problem?</string>
+    <string name="why_is_it_np_complete">Why is it NP-Complete?</string>
+    <string name="related_problems">Related Problems</string>
+    <string name="more_formally">More formally...</string>
+    <string name="credits_links">Credits</string>
+    <string name="garey_johnson_citation"> Garey,M.R.;Johnson,D. S.Computers and Intractability:
+        A Guide to the Theory of NP-Completeness. Bell Telephone Labotaries, 1979 Print. \n</string>
+    <string name="proof_of_correctness">Proof of correctness:</string>
+    <string name="app_name">NP Complete Library</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="library_entry">Library Entrance</string>
+    <string name="the_basics">THE BASICS</string>
+    <string name="all_problems">ALL PROBLEMS</string>
+    <string name="see_all">See all</string>
+    <string name="made_by_hoyin_chu">Made by Hoyin Chu</string>
+    <string name="disclaimer_name">Disclaimer</string>
+    <string name="all_problems_comment">and a lot more...but here are the ones that we think are the
+        most important to know</string>
+    <!-- satisfiability stuff-->
+    <string name="satisfiability_name">Satisfiability</string>
+    <string name="satisfiability_title">Satisfiability (SAT)</string>
+    <string name="satisfiability_problem"> Given a boolean formula determine if it is
+        satisfiable. That is, if there exist an assignment of variables such that the formula
+        would evaluate to true. </string>
+    <string name="satisfiability_more_formal"> A propositional logic formula, also called Boolean
+        expression, is built from variables, operators AND (conjunction, also denoted by ∧),
+        OR (disjunction, ∨), NOT (negation, ¬), and parentheses. A formula is said to be
+        satisfiable if it can be made TRUE by assigning appropriate logical values
+        (i.e. TRUE, FALSE) to its variables. The Boolean satisfiability problem (SAT) is,
+        given a formula, to check whether it is satisfiable. </string>
+    <string name="satisfiability_npcomplete_reason"> First it is easy to see the satisfiability
+        problem is NP, since a non-deterministic algorithm need only guess an assignment of value
+        to the formula to see if it works in polynomial time. The satisfiability problem is
+        NP-Complete according to the Cook-Levin theorem, which has the following core idea: \n\t\t
+        Given any decision problem in NP,construct a non-deterministic machine that solves it in
+        polynomial time. Then for each input to that machine, build a Boolean expression which says
+        that the input is passed to the machine, the machine runs correctly, and the machine halts
+        and answers "yes". Then the expression can be satisfied if and only if there is a way for
+        the machine to run correctly and answer "yes", so the satisfiability of the constructed
+        expression is equivalent to asking whether or not the machine will answer "yes". \n\t\t
+        Since such machine can solve any NP-problem in polynomial time, which is the very
+        definition of being NP-Complete. The satisfiability problem is therefore NP-Complete. \n\t\t
+        Another important consequence of the Cook-Levin theorem is that in the proof a boolean
+        formula of conjunctive normal form (CNF) was used, therefore we also know that determining
+        whether a boolean formula in CNF is satisfiable (CNF-SAT) is NP-Complete. This will become
+        helpful later on when we tackle the three-satisfiability (3-SAT) problem. </string>
+    <string name="satisfiability_credit1">https://s3.amazonaws.com/content.udacity-data.com/courses/gt-cs6505/npcompleteness.html</string>
+    <!-- 3sat stuff-->
+    <string name="three_satisfiability_name">Three-Satisfiability  (3-SAT)</string>
+    <string name="three_satisfiability_problem"> Given a boolean formula in conjunctive normal
+    form with 3 literals in each clause, determine if the formula is satisfiable. For example:</string>
+    <string name="three_satisfiability_problem_cont1"> is one such formula.</string>
+    <string name="three_satisfiability_npcomplete_reason" android:autolink="web">First it is easy to see 3SAT is in NP
+        because given an assignment of the variables one can check if the formula works in
+        polynomial time. It is complete because a reduction can be performed from CNF-SAT to 3SAT.
+        The trick to the reduction is that for any boolean formula in CNF one can rewrite it as
+        a formula in 3-CNF without affecting its overall satisfiability, thus the new rewritten
+        formula is satisfiable if and only if the old formula was satisfiable.
+        Details of the reduction can be found in this link:
+        https://users.fit.cvut.cz/~belohja4/MI-PAA/cv4_SAT-3SAT-and-other-red.pdf
+        </string>
+    <string name="three_satisfiability_title">Three-Satisfiability (3SAT or 3-CNF-SAT)</string>
+    <!-- Clique stuff-->
+    <string name="clique_name">Clique</string>
+    <string name="clique_title">Clique</string>
+    <string name="clique_problem">A clique is a subset of vertices of an undirected graph such that
+        every two distinct vertices in the clique are adjacent. For example, the graph below has a
+        clique of size 4 and a clique of size 3.</string>
+    <string name="clique_problem_cont1">the clique problem is, given a graph G and an integer k,
+        determine if G contains a clique of size k.</string>
+    <string name="clique_problem_npcomplete_reason"> We can construct a
+        verifier that takes a graph G(V, E), k, and a set of vertices S. Then we can check if there
+        exist an edge between every pair of vertices in S and if |S| = k. Since this can be done in
+        O(n^2) time, clique is in NP. \n
+        There are multiple ways to show clique is NP-complete, including a reduction from 3SAT and
+        Independent Set, details of the reduction are in the links below: \n
+        3-SAT reduce to clique:
+        http://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/threeSAT_to_clique.html \n
+        Independent Set reduce to clique:
+        http://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/clique_to_independentSet.html
+</string>
+    <!--Independent set stuff-->
+    <string name="independent_set_name">Independent Set</string>
+    <string name="independent_set_title">Independent Set (Maximal Independent Set)</string>
+    <string name="independent_set_problem">In a graph, an independent set is a set of vertices
+        such that none of which are adjacent (connected by an edge), the maximal independent set
+        decision problem is: Given a graph G and an integer k, does G has an independent set of
+        size at least k?</string>
+    <string name="independent_set_correctness_link1">http://www.cs.cornell.edu/courses/cs482/2005su/handouts/NPComplete.pdf</string>
+    <string name="independent_set_credit_link1">https://www.cl.cam.ac.uk/teaching/0607/Complexity/lecture6.pdf \n</string>
+    <string name="independent_set_in_np_reason">Given a graph G(V,E), an integer k, a witness w which
+        is a set of vertices, one can easily verify if the vertices are independent by checking if
+        an edge exist between any one of the vertices in w. This will take O(n^2) time which is a
+        polynomial time thus independent set is in NP. </string>
+    <!--Hamiltonian Cycle Stuff-->
+    <string name="hamiltonian_cycle_name">Hamiltonian Cycle</string>
+    <string name="hamiltonian_cycle_title">Hamiltonian Cycle (Hamiltonian Circuit)</string>
+    <string name="hamiltonian_cycle_problem">A cycle in a graph that visits every vertices exactly
+        once is called a Hamiltonian cycle, the Hamiltonian cycle problem is given a graph G,
+        determine if it has a Hamiltonian cycle. Example of a Hamiltonian Cycle in a graph is
+        given below: </string>
+    <string name="hamiltonian_cycle_in_np_reason">Given a graph(V,E) and witness w which is a set of
+        vertices ordered by their appearance in the cycle, it can be easily verified if the
+        vertices form a Hamiltonian cycle in polynomial time by checking if an edge exist between
+        each consecutive pair of vertices, an edge exist between the last and the first vertex,
+        and if w = V. Therefore Hamiltonian Cycle is in NP</string>
+    <string name="hamiltonian_cycle_reduction1">3SAT can be reduced to Hamiltonian Cycle:</string>
+    <string name="hamiltonian_cycle_reduction_link1">
+        http://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/threeSAT_to_hamiltonianCycle.html</string>
+    <string name="hamiltonian_cycle_reduction2">Vertex Cover can be reduced to Hamiltonian Cycle: </string>
+    <string name="hamiltonian_cycle_reduction_link2">http://cs.indstate.edu/~bdhome/HamCycle.pdf</string>
+    <!--Hamiltonian Path Stuff-->
+    <string name="hamiltonian_path_name">Hamiltonian Path</string>
+    <string name="hamiltonian_path_title">Hamiltonian Path</string>
+    <string name="hamiltonian_path_problem">A path in a graph that visits every vertex exactly
+        once is called the Hamiltonian Path, the Hamiltonian Path problem is given a graph G
+        determine if it has a Hamiltonian Path. Example of a Hamiltonian Path in a graph is given below:</string>
+    <string name="hamiltonian_path_in_np_reason">Given a graph G(V,E) and a witness w which is a set
+        of vertices ordered by their appearance in the path, it can be easily verified if the
+        vertices form a Hamiltonian path in polynomial time by checking of an edge exist between
+        every consecutive vertices and if w = V. Therefore Hamiltonian Path is in NP</string>
+    <string name="hamiltonian_path_reduction1">Hamiltonian Cycle can be reduced to Hamiltonian Path:</string>
+    <string name="hamiltonian_path_credit_link1">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/sat.pdf</string>
+    <!--Traveling Salesman Stuff-->
+    <string name="traveling_salesman_name">Traveling Salesman (TSP)</string>
+    <string name="traveling_salesman_title">Traveling Salesman (TSP)</string>
+    <string name="traveling_salesman_problem">In the NP-hard version, the problem being asked is
+        given a weighted graph, what is the shortest path that visits every vertex and returns to
+        the original vertex? In the decision variant, given a weight graph G and an integer k, is
+        there a path that visits every vertex and returns to the original vertex that is cheaper
+        than k. The general TSP is NP-hard while the decision variant is NP-Complete.</string>
+    <string name="traveling_salesman_in_np_reason">Given a graph G(V,E), an integer k, and a witness
+        w which is a set of vertices ordered by their appearance in the path,it can be easily
+        verified if the vertices form a path that visits every vertex (a Hamiltonian Path) and cost
+        less than k by checking if an edge exist between every consecutive vertices, if w = V,
+        and if their total weight is less than k. Since this can be done in polynomial time, this
+        shows that the decision variant of TSP is in NP. Notice this does NOT show that the general
+        TSP is in NP because given a set of vertices as witness we are unable to verify that they
+        indeed form the shortest path.</string>
+    <string name="traveling_salesman_reduction1">Hamiltonian Cycle can be reduced to TSP:</string>
+    <string name="traveling_salesman_reduction_link1">
+        http://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/hamiltonianCycle_to_TSP.html</string>
+    <string name="traveling_salesman_credit_link1">http://examples.gurobi.com/traveling-salesman-problem/</string>
+    <!--Vertex Cover Stuff-->
+    <string name="vertex_cover_name">Vertex Cover</string>
+    <string name="vertex_cover_title">Vertex Cover \n (Minimum Vertex Cover)</string>
+    <string name="vertex_cover_problem">A vertex cover in a graph is a set of vertices such that
+        every edge of the graph has at least one endpoint in the set. The
+        general minimum vertex cover problem asks, given a graph G, find a set of vertices that
+        forms the minimum vertex cover, this is NP-Hard. The decision variant of the problem is,
+        given a graph G and an integer k, determine if the graph has a vertex cover of size at most
+        k, this is NP-Complete. </string>
+    <string name="vertex_cover_example_explanation">
+        (The red vertices are the minimum vertex cover of the graph)</string>
+    <string name="vertex_cover_in_np_reason">Given a graph G(V,E), an integer k and a witness w
+        which is a set of vertices, it can be easily verified that w is a vertex cover of size less
+        than k by going through the edge list to check if every edge has at least one end point in w,
+        and if |w| is less than k. Since this can be done in polynomial time, the decision variant
+        of vertex cover is in NP. Notice this does NOT show the general vertex cover problem is in
+        NP because given a set of vertices as witness we are unable to verify that they are indeed
+        the MINIMUM vertex cover. </string>
+    <string name="vertex_cover_reductions">Independent Set and 3SAT can be reduced to
+        Vertex Cover. \n Independent Set:http://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/independentSet_to_vertexCover.html
+        \n 3SAT: https://www8.cs.umu.se/kurser/TDBAfl/VT06/algorithms/LEC/LECTUR16/NODE21.HTM</string>
+    <!--Three Dimensional Matching Stuff-->
+    <string name="three_dimensional_matching_name">Three Dimensional Matching (3DM)</string>
+    <string name="three_dimensional_matching_title">Three Dimensional Matching \n (3DM)</string>
+    <string name="three_dimensional_matching_problem">Given 3 sets X, Y, Z each with n elements, and a set
+        T of triplets where each triplet has exactly one element each of X, Y, Z, determine if there is
+        a set of n triplets in T such that every elements in X,Y,Z is contained in exactly one triplet. </string>
+    <string name="three_dimensional_matching_graph_explanation">(In the graph above the answer is yes 
+        because the triplets colored green are covering every elements in X,Y,Z and each elements
+        appeared in exactly one triplet)</string>
+    <string name="three_dimensional_matching_in_np_reason">Given the sets X,Y,Z, a set of triplets T,
+        and a witness w which is a subset of the triplets in T, it is easy to verify in polynomial
+        time that if w is a valid three-dimensional matching. Just check if the collections of all
+        elements in w is exactly equal to all elements in X, Y, Z.</string>
+    <string name="three_dimensional_matching_reduction_intro">3SAT can be reduced to three dimensional matching:</string>
+    <string name="three_dimensional_matching_reduction_link1">https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/3dm.pdf</string>
+    <!--Subset Sum Stuff-->
+    <string name="subset_sum_name">Subset Sum</string>
+    <string name="subset_sum_title">Subset Sum</string>
+    <string name="subset_sum_problem">Given a set of natural numbers and a number k, is there a
+        subset such that all the natural number in the subset adds up to k? </string>
+    <string name="subset_sum_in_np_reason">Given a set of natural number S, a number k, and a witness
+        w which is a subset of S, just check if every element in w is also in S and if all of them sums
+        up tp k. This verification can be done in polynomial time therefore the problem is in NP.</string>
+    <string name="subset_sum_reduction_intro">3SAT and three dimensional matching can be reduced to subset sum:</string>
+    <string name="subset_sum_reduction_link1">3SAT: http://cs.mcgill.ca/~lyepre/pdf/assignment2-solutions/subsetSumNPCompleteness.pdf</string>
+    <string name="subset_sum_reduction_link2">Three Dimensional Matching: https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/3dm.pdf</string>
+    <!--Partition stuff-->
+    <string name="partition_name">Partition</string>
+    <string name="partition_title">Partition</string>
+    <string name="partition_problem">Given a set of positive integers, can it be split into two
+        subsets such that their sums are equal?</string>
+    <string name="partition_in_np_reason">Given a set S, a witness w which is two subsets of S, it
+        is easy to check if the two subsets have equal sum by adding them up individually then compare
+        their sums. Since this can be verified in polynomial time, partition is in NP.</string>
+    <string name="partition_reduction_intro">Subset sum can be reduced to partition:</string>
+    <string name="partition_reduction_link1">https://web.njit.edu/~marvin/cs341/hw/hwsoln13.pdf</string>
+    <!--Three Coloring Stuff-->
+    <string name="three_coloring_name">Three Coloring (3-Color)</string>
+    <string name="three_coloring_title">Three Coloring (3-Color, Chromatic Number)</string>
+    <string name="three_coloring_problem">Given a graph, can every vertex be colored with one of
+        three colors such that no two adjacent vertices have the same color? </string>
+    <string name="three_coloring_in_np_reason">Given a graph G(V,E) and a witness which is an
+        assignment of colors to every vertices, just go through every vertices in the adjacency list
+        and check if any of the adjacent vertices have the same color. Since this can be done in
+        polynomial time, three coloring is in NP.</string>
+    <string name="three_coloring_reduction_intro">3SAT can be reduced to 3-color:</string>
+    <string name="three_coloring_reduction_link1">https://cgi.csc.liv.ac.uk/~igor/COMP309/3CP.pdf</string>
+    <!--Set Cover Stuff-->
+    <string name="set_cover_name">Set Cover (Set Basis)</string>
+    <string name="set_cover_title">Set Cover (Set Basis)</string>
+    <string name="set_cover_in_np_reason"> Given a set S and a witness w which is a sets of subsets
+        of S, it is easy to check if w covers S. Just check if every elements in w also appeared in S
+        exactly once. Since this can be done in polynomial time, set cover is in NP.</string>
+    <string name="set_cover_reduction_intro">Vertex Cover can be reduced to set cover:</string>
+    <string name="set_cover_reduction_link1">http://www.cs.princeton.edu/~wayne/cs423/lectures/reductions-poly-4up.pdf</string>
+    <!--Set Packing Stuff-->
+    <string name="set_packing_name">Set Packing</string>
+    <string name="set_packing_title">Set Packing</string>
+    <string name="set_packing_reduction_intro">Set packing is in NP and Independent Set can be reduced
+        to set packing, for details see:</string>
+    <string name="set_packing_problem_explanation">Mutually disjoint sets: sets that do not share same element(s) </string>
+    <string name="set_packing_reduction_link1">http://www-bcf.usc.edu/~dkempe/CS303/solutions13.pdf (under Set Packing)</string>
+    <!--Subgraph Isomorphism Stuff-->
+    <string name="subgraph_isomorphism_name">Subgraph Isomorphism</string>
+    <string name="subgraph_isomorphism_title">Subgraph Isomorphism</string>
+    <string name="subgraph_isomorphism_problem">Two graphs which contain the same number of graph
+        vertices connected in the same way are said to be isomorphic. Given a graph G and a graph H,
+        does graph G contains a subgraph that is isomorphic to H?</string>
+    <string name="subgraph_isomorphism_reduction_intro">Subgraph isomorphism is in NP and Clique can
+        be reduced to subgraph isomorphism:</string>
+    <string name="subgraph_isomorphism_reduction_link1">For subgraph isomorphism is in NP proof, see: http://www-bcf.usc.edu/~dkempe/CS303/solutions13.pdf</string>
+    <string name="subgraph_isomorphism_reduction_link2">For a more detailed reduction, see:
+        http://pages.cpsc.ucalgary.ca/~verwaal/courses/413old/supplemental/week12_day2/CliqueReducesSI.pdf</string>
+    <string name="subgraph_isomorphism_credit_link1">
+        https://www.researchgate.net/figure/Subgraph-isomorphism-An-example-of-subgraph-isomorphism-between-graphs-G-and-G-with-h_232085273_fig5</string>
+    <!--Longest Path Stuff-->
+    <string name="longest_path_name">Longest Path</string>
+    <string name="longest_path_title">Longest Path</string>
+    <string name="longest_path_problem">A path is called simple if it does not have any repeated 
+        vertices. Given an undirected graph G and an integer k, does G contains a simple path with k or more edges?</string>
+    <string name="longest_path_weighted_version_problem">There is also a weighted version of the problem,
+        where the edges are assigned weights and k represents the "target weight". This is formally
+        defined as:</string>
+    <string name="longest_path_in_np">Given a graph G(V,E), an integer k, and a witness w which is a
+        set of edges in G ordered by their appearance in the path, it is easy to check if the edges
+        in w form a simple path with size more than or equal to k, just check if the first and last
+        vertex appeared only once, and if any vertices in between appeared only twice. Since this can
+        be done in polynomial time, longest path is in NP.</string>
+    <string name="longest_path_reduction_intro">Hamiltonian Path can be reduced to longest path:</string>
+    <string name="longest_path_reduction_link1">Under Hamiltonian Path, Longest Path Problem:
+        http://www.math.mcgill.ca/vetta/CS360.dir/p3sol.pdf</string>
+    <!--Feedback Vertex Set Stuff-->
+    <string name="feedback_vertex_set_name">Feedback Vertex Set</string>
+    <string name="feedback_vertex_set_title">Feedback Vertex Set (Minimum Feedback Vertex Set)</string>
+    <string name="feedback_vertex_set_problem">Given a directed graph G and an integer k, can we remove
+        k vertices so that the remaining graph contains no directed cycles?</string>
+    <string name="feedback_vertex_set_reduction_intro">Feedback vertex set is in NP and Vertex Cover
+        can be reduced to feedback vertex set, for details:</string>
+    <string name="feedback_vertex_set_reduction_link1">
+        See under (4) Feedback vertex set: http://www.math.mcgill.ca/vetta/CS360.dir/p3sol.pdf</string>
+    <!--Dominating Set Stuff-->
+    <string name="dominating_set_name">Dominating Set</string>
+    <string name="dominating_set_title">Dominating Set</string>
+    <string name="dominating_set_problem">A dominating set S in a graph G is a subset of vertices such
+        that every vertex of G that is not in S is adjacent to at least one member in S. Given a graph
+        G and an integer k, determine if there is an dominating set in G with size at most k.</string>
+    <string name="dominating_set_reduction_intro">Dominating set is in NP and Vertex Cover can be
+        reduced to dominating set, for details:</string>
+    <string name="dominating_set_reduction_link1">https://www.cs.umd.edu/class/spring2011/cmsc651/lec25.pdf</string>
+    <!--Bin packing stuff-->
+    <string name="bin_packing_name">Bin Packing</string>
+    <string name="bin_packing_title">Bin Packing</string>
+    <string name="bin_packing_problem">Given objects with different volume, bins with the same volume
+        V, an integer k, determine if the objects can be fit into at most k bins.</string>
+    <string name="bin_packing_in_np_reason">Given objects with different volume, bins with maximum
+        capacity V, an integer k, and a witness w which is an assignment of items in different bins,
+        it is easy to check if the total weight of items in each bin exceeded V and if at most k bins
+        were used. Since this can be done in polynomial time, bin packing is in NP. </string>
+    <string name="bin_packing_reduction_intro">Partition can be reduced to bin packing:</string>
+    <string name="bin_packing_reduction_link1">The reduction is under Theorem 12.2:
+        https://dcg.epfl.ch/files/content/sites/dcg/files/courses/2012%20-%20Combinatorial%20Optimization/12-BinPacking.pdf</string>
+    <!--Job Scheduling Stuff-->
+    <string name="job_scheduling_name">Job Scheduling</string>
+    <string name="job_scheduling_title">Job Scheduling (Multiprocessor Scheduling)</string>
+    <string name="job_scheduling_problem">Given a set of jobs with different length, a number of
+        workers N, and a time T (deadline), can the jobs be assigned to the N workers such that all
+        jobs can be done within T time?</string>
+    <string name="job_scheduling_reduction_intro">Job scheduling problem is in NP and Partition can
+        be reduced to job scheduling:</string>
+    <string name="job_scheduling_credits_link1">Images come from:
+        https://web.stanford.edu/class/archive/cs/cs103/cs103.1132/lectures/27/Small27.pdf</string>
+    <!--Feedback Arc Set Stuff-->
+    <string name="feedback_arc_set_name">Feedback Arc Set</string>
+    <string name="feedback_arc_set_title">Feedback Arc Set</string>
+    <string name="feedback_arc_set_problem">Given a graph G and an integer k, can we remove at most
+        k edges so that the remaining graph is acyclic?</string>
+    <string name="feedback_arc_set_reduction_intro">Feedback Arc Set is in NP and Vertex Cover can
+        be reduced to feedback arc set: </string>
+    <string name="feedback_arc_set_reduction_link1">Under the Nonsense Prerequisites: Solution:
+        http://www.cs.toronto.edu/~lalla/373s14/assignments/A4Sol.pdf</string>
+    <!--Disclaimer Stuff-->
+    <string name="disclaimer_title">Disclaimer</string>
+    <string name="disclaimer_introduction_title">Introduction</string>
+    <string name="disclaimer_introduction_content">The information provided on this mobile application is for
+    general informational purposes only. All information on the mobile application is provided in good faith,
+    however we make no representation or warranty of any kind, express or implied, regarding the
+    accuracy, adequacy, validity, reliability, availability or completeness of any information
+    on this mobile application. \n
+    Under no circumstance shall we have any reliability to you for any loss or damage of any kind
+    incurred as a result of the use of our mobile application or reliance on any information
+    provided on out mobile application. Your use of our mobile application and your reliance on our
+    information is solely at your own risk. We do not own any images or any linked materials.</string>
+    <string name="disclaimer_external_link_title">External Links Disclaimer For Mobile App</string>
+    <string name="disclaimer_external_link_content">Our mobile application may contain links to other
+        websites or content belonging to or originating from third parties . Such external links are not
+        investigated, monitored, or checked for accuracy, adequacy, validity, reliability,
+        availability or completeness by us. \n We do not warrant, endorse, guarantee, or assume responsibility
+    for the accuracy or reliability of any information offered by third-party websites linked through
+    the sites or any websites. We will not be a party to or in any way be responsible for monitoring
+    any transaction between you and third-party providers of products or services.</string>
+
+
+
+
+</resources>

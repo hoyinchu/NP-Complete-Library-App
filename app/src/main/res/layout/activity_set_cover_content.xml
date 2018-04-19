@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="hoyinpersonal.npcompletelibrary.SetCoverContent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/set_cover_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/set_cover_title"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_cover_what_problem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/what_is_the_problem"
+                android:textColor="@color/colorWhatIsProblem"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/set_cover_problem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/set_cover_what_problem" />
+
+            <TextView
+                android:id="@+id/set_cover_more_formal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/more_formally"
+                android:textColor="@android:color/background_dark"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/set_cover_formal_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/set_cover_formal_summary" />
+
+            <TextView
+                android:id="@+id/set_cover_why_np_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/why_is_it_np_complete"
+                android:textColor="@color/colorWhyNPComplete"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/set_cover_in_np_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/set_cover_in_np_reason"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/set_cover_reduction_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/set_cover_reduction_intro"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/set_cover_reduction_image1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/set_cover_reduction_image1" />
+
+            <ImageView
+                android:id="@+id/set_cover_reduction_image2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/set_cover_reduction_image2" />
+
+            <TextView
+                android:id="@+id/set_cover_related_problems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/related_problems"
+                android:textColor="@color/colorRelatedProblem"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/vertex_cover_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="@string/vertex_cover_name" />
+
+            <TextView
+                android:id="@+id/set_cover_credits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/credits_links"
+                android:textColor="@color/colorCredits"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/set_cover_credits_link1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/set_cover_reduction_link1" />
+
+            <TextView
+                android:id="@+id/set_cover_credits_link2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/garey_johnson_citation" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
